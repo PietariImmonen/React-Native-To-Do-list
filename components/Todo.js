@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const Todo = ({task, deleteTodo, id}) => {
+const Todo = ({task, deleteTodo, ids}) => {
   return (
     <View style={styles.container}>
       <Text style={{color: '#FFF', marginRight: '10%', maxWidth: '80%'}} numberOfLines={5}>Task: {task}</Text>
-      <TouchableOpacity style={styles.button} onPress={() => deleteTodo(id)}>
+      <TouchableOpacity style={styles.button} onPress={() => deleteTodo(ids)}>
           <Text style={{fontSize: 15}}>-</Text>
       </TouchableOpacity>
     </View>

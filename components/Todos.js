@@ -11,7 +11,7 @@ const Todos = ({todos, deleteTodo}) => {
       <Text style={styles.todoText}>TODOS:</Text>
     <ScrollView>
       {todos.map(i => {
-        return(<Todo task={i.task} key={i.id} deleteTodo={deleteTodo} id={i.id}/>)
+        return(<Todo task={i.task} key={i.id} deleteTodo={deleteTodo} ids={i.ids}/>)
       })}
     </ScrollView>
     </View>
