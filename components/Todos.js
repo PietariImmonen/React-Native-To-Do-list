@@ -3,10 +3,10 @@ import React from 'react'
 import Todo from './Todo'
 
 const Todos = ({todos, deleteTodo}) => {
-
+  //Getting todays date
   const date = new Date().getDate()
   const month = new Date().getMonth()+1
-
+  //Component mapping all Todos
   return (
     <View style={styles.container}>
       <Text style={styles.todoText}>Today {date}.{month}.</Text>
@@ -20,7 +20,7 @@ const Todos = ({todos, deleteTodo}) => {
 }
 
 export default Todos
-
+//styles for Todos
 const styles = StyleSheet.create({
     container: {
         flex: 10,

@@ -4,13 +4,13 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { Entypo } from '@expo/vector-icons'; 
 
 const ToDoForm = ({task, setTask, visible, setVisible, addTodo}) => {
-
+    //Used for sending calling the function to add todo to database
     const sendTodo = () => {
         addTodo()
         setVisible(false)
     }
 
-
+//Creating the modal to add todos to Database
   return (
     <View style={styles.container}>
         <Modal
@@ -34,9 +34,9 @@ const ToDoForm = ({task, setTask, visible, setVisible, addTodo}) => {
                             value={task}
                         />
                     </View>
-                    <View style={styles.sendingButton}>
-                        <Text onPress={sendTodo} style={{color: 'white'}}>Add To-Do item!</Text>
-                    </View>
+                    <TouchableOpacity style={styles.sendingButton} onPress={sendTodo}>
+                        <Text style={{color: 'white'}}>Add To-Do item!</Text>
+                    </TouchableOpacity>
                 </View>
                 
                 </View>
@@ -48,11 +48,8 @@ const ToDoForm = ({task, setTask, visible, setVisible, addTodo}) => {
 }
 
 export default ToDoForm
-
+//All the styles
 const styles = StyleSheet.create({
-    container: {
-
-    },
     input: {
         width: '80%',
         borderWidth: 2,

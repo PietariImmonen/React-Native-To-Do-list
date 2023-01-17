@@ -4,10 +4,8 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Todo = ({task, deleteTodo, id}) => {
 
-/*<TouchableOpacity style={styles.button} onPress={() => deleteTodo(id)}>
-          <Text style={{fontSize: 15}}>-</Text>
-      </TouchableOpacity>*/
-  console.log(id)
+
+  //Creating To-Do component
   return (
     <View style={styles.container}>
       <Text style={{color: '#FFF', marginRight: '10%', maxWidth: '80%', fontSize: 20}} numberOfLines={5}>{task}</Text>
@@ -17,7 +15,7 @@ const Todo = ({task, deleteTodo, id}) => {
 }
 
 export default Todo
-
+//Styles for Todo component
 const styles = StyleSheet.create({
   container: {
     width: '100%',

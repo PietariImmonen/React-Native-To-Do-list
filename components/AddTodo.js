@@ -2,6 +2,8 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 const AddTodo = ({visible, setVisible}) => {
+
+  //The button in the bottom of the screen opening Modal
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={() => setVisible(true)} >

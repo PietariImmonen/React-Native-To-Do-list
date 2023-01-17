@@ -11,7 +11,7 @@ export default function App() {
   const [modalVisible, setModalVisible] = React.useState(false)
   const [tasks, setTasks] = React.useState([])
 
-
+  //function used to get To-Dos from database
   const getAll = async () => {
     const data = await getTasks()
     setTasks(data)
@@ -19,18 +19,23 @@ export default function App() {
 
   React.useEffect(() => {getAll()}, [modalVisible])
 
+
+  //used to add todo to database and to state
   const addTodo = async () => {
-    postToBack({task: task})
-    setTask('')
+    if(task.length> 0) {
+      postToBack({task: task})
+      setTask('')
+    }
+    return
   }
 
-
+  //Used for deleting todo from database and from state
   const deleteTodo =  (id) => {
     deleteTask(id)
     const newTasks = tasks.filter(i => i.id!==id)
     setTasks(newTasks)
   }
-
+  //Creating main component
   return (
     <SafeAreaView style={styles.container}>
       <Todos todos={tasks} deleteTodo={deleteTodo}/>
@@ -39,7 +44,7 @@ export default function App() {
     </SafeAreaView>
   );
 }
-
+//Some Styles for the main container
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFF',
