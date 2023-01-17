@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     todoText: {
-      paddingTop: 40,
+      paddingTop: 80,
       fontSize: 40,
       color: '#000',
     },
