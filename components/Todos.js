@@ -30,9 +30,9 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     todoText: {
+      paddingTop: 40,
       fontSize: 40,
       color: '#000',
-      marginTop: 40,
     },
 
     scrollview: {
