@@ -13,7 +13,7 @@ export const postToBack = async (newObject) => {
 }
 //Deleting todo from database
 export const deleteTask = async (id) => {
-    const req = axios.delete(`https://reactnativetodoapp.onrender.com/tasks/${id}`)
+    const req = axios.delete(`https://reactnativetodoapp.onrender.com/api/tasks/${id}`)
     return req.then(res => res.data)
 }
 
