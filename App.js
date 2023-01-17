@@ -23,10 +23,10 @@ export default function App() {
   //used to add todo to database and to state
   const addTodo = async () => {
     if(task.length> 0) {
-      postToBack({task: task})
+      await postToBack({task: task})
+      getAll()
       setTask('')
     }
-    return
   }
 
   //Used for deleting todo from database and from state
