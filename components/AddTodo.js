@@ -5,7 +5,7 @@ const AddTodo = ({visible, setVisible}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={() => setVisible(true)} >
-          <Text style={{fontSize: 30}}>+</Text>
+          <Text style={{fontSize: 30, color: 'white'}}>+</Text>
       </TouchableOpacity>
     </View>
   )
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderRadius: 50,
-        backgroundColor: '#8687E7',
+        backgroundColor: '#060606',
         alignItems: 'center',
         justifyContent: 'center',
         bottom: '20%',

@@ -1,13 +1,17 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
+import Ionicons from '@expo/vector-icons/Ionicons';
 
-const Todo = ({task, deleteTodo, ids}) => {
+const Todo = ({task, deleteTodo, id}) => {
+
+/*<TouchableOpacity style={styles.button} onPress={() => deleteTodo(id)}>
+          <Text style={{fontSize: 15}}>-</Text>
+      </TouchableOpacity>*/
+  console.log(id)
   return (
     <View style={styles.container}>
-      <Text style={{color: '#FFF', marginRight: '10%', maxWidth: '80%'}} numberOfLines={5}>Task: {task}</Text>
-      <TouchableOpacity style={styles.button} onPress={() => deleteTodo(ids)}>
-          <Text style={{fontSize: 15}}>-</Text>
-      </TouchableOpacity>
+      <Text style={{color: '#FFF', marginRight: '10%', maxWidth: '80%', fontSize: 20}} numberOfLines={5}>{task}</Text>
+      <Ionicons name="md-checkmark-circle" size={32} color="white" onPress={() => deleteTodo(id)}/>
     </View>
   )
 }
@@ -16,14 +20,13 @@ export default Todo
 
 const styles = StyleSheet.create({
   container: {
-    width: '95%',
-    height: 'auto',
-    marginBottom: 10,
+    width: '100%',
     padding: 30,
+    marginTop: 20,
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#363636',
+    backgroundColor: '#060606',
     shadowColor: '#123',
     borderRadius: 10,
     shadowOffset: {

@@ -1,17 +1,18 @@
-import { StyleSheet, Text, ScrollView, View } from 'react-native'
+import { StyleSheet, Text, ScrollView, SafeAreaView, View } from 'react-native'
 import React from 'react'
 import Todo from './Todo'
 
 const Todos = ({todos, deleteTodo}) => {
 
-
+  const date = new Date().getDate()
+  const month = new Date().getMonth()+1
 
   return (
     <View style={styles.container}>
-      <Text style={styles.todoText}>TODOS:</Text>
-    <ScrollView>
+      <Text style={styles.todoText}>Today {date}.{month}.</Text>
+    <ScrollView style={styles.scrollview}>
       {todos.map(i => {
-        return(<Todo task={i.task} key={i.id} deleteTodo={deleteTodo} ids={i.ids}/>)
+        return(<Todo task={i.task} key={i.id} deleteTodo={deleteTodo} id={i.id}/>)
       })}
     </ScrollView>
     </View>
@@ -24,12 +25,17 @@ const styles = StyleSheet.create({
     container: {
         flex: 10,
         width: '100%',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'flex-start',
+        padding: 10,
     },
     todoText: {
       fontSize: 40,
-      color: '#FFF',
-      marginTop: 40
+      color: '#000',
+      marginTop: 40,
+    },
+
+    scrollview: {
+      width: '100%',
     }
 })
